@@ -185,6 +185,7 @@ img {
   .margin-toggle:checked + .sidenote, .margin-toggle:checked + .marginnote {
     display: block;
     font-size: 12px;
+    
   }
 }
 
@@ -225,6 +226,8 @@ blockquote .marginnote {
   min-width: 59%;
   text-align: left;
 }
+
+
 
 div.fullwidth,
 table.fullwidth {
@@ -285,7 +288,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .images {
   text-align: center; 
-  font-size: 17px;
+  font-size: 0.8em;
 }
 
 .images img {

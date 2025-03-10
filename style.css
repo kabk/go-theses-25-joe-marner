@@ -10,6 +10,27 @@ html {
   justify-content: center;
 }
 
+.main-container {
+  margin-inline: auto;
+  position: relative;
+  flex-grow: 1;
+  /* margin-top: 80px; */
+  box-sizing: border-box;
+  padding: 0 20px;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1150px) {
+    padding: 0 50px;
+    display: flex;
+    width: min(1600px, 100%);
+    gap: 1rem;
+    justify-content: space-between; 
+  }
+}
+
+
 .sidenote-number {
   counter-increment: sidenote-counter;
 }
@@ -89,7 +110,7 @@ body {
   appearance: none;
   flex: 1;
   height: 3px;
-  background: #000;
+  background: #333;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -163,6 +184,7 @@ img {
 
   .margin-toggle:checked + .sidenote, .margin-toggle:checked + .marginnote {
     display: block;
+    font-size: 12px;
   }
 }
 
@@ -247,26 +269,6 @@ label.margin-toggle:not(.sidenote-number) {
   height: 100%;
 }
 
-.main-container {
-  margin-inline: auto;
-  flex-grow: 1;
-  margin-top: 40px;
-  box-sizing: border-box;
-  padding: 0 20px;
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (min-width: 1150px) {
-    padding: 0 50px;
-    display: flex;
-    width: min(1600px, 100%);
-    gap: 1rem;
-    justify-content: space-between; 
-  }
-  
-}
-
 .centered-text-container {
   display: flex;
   justify-content: center; 
@@ -294,7 +296,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .sidebar {
   background-color: var(--bg-color);
-  color: #555;
+  color: #333;
   text-decoration: none;
   /* height: calc(100vh - 40px); */
   overflow-y: auto;
@@ -308,10 +310,6 @@ label.margin-toggle:not(.sidenote-number) {
     width: 290px;
     line-height: 1.2;
   }
-}
-
-.sidebar * .active{
-  /* background-color: yellow; */
 }
 
 .right-sidebar {
@@ -351,7 +349,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .right-sidebar .small-text {
   font-size: inherit; 
-  color: #555;
+  color: #333;
   text-align: center;
 }
 
@@ -364,7 +362,6 @@ label.margin-toggle:not(.sidenote-number) {
   word-wrap: break-word;
   line-height: 1.2;
 }
-
 
 @media (min-width: 1150px) {
   .content {
@@ -379,7 +376,7 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 .center-text {
-  color:#112643;
+  color:#333;
   font-variant: small-caps;
   word-wrap: break-word;
   line-height: 1.2;
@@ -395,12 +392,16 @@ label.margin-toggle:not(.sidenote-number) {
 .chapter {
   display: none;
   opacity: 0;
-  /* transition: opacity 0.5s ease-in-out; */
+  scroll-margin-top: 100px;
 }
 
 .chapter.active {
   display: block;
   opacity: 1;
+}
+
+.u{
+  color: #333; 
 }
 
 .centered-text {
@@ -436,5 +437,5 @@ p, .sidebar a, .right-sidebar .small-text {
 
 ::selection {
   background-color: #00FF00;
-  color: #000000;
+  color: #333;
 }

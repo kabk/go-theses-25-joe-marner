@@ -6,7 +6,6 @@ const durationEl = document.getElementById('duration');
 
 let isPlaying = false;
 
-
 audio.addEventListener('loadedmetadata', () => {
     console.log('Audio Duration: ', audio.duration);  
     if (audio.duration) {
@@ -18,24 +17,20 @@ audio.addEventListener('loadedmetadata', () => {
     }
 });
 
-
 audio.addEventListener('canplaythrough', () => {
     console.log('Audio can play through');
     durationEl.textContent = formatTime(audio.duration);
     seekBar.max = Math.floor(audio.duration);
 });
 
-
 audio.addEventListener('timeupdate', () => {
     seekBar.value = Math.floor(audio.currentTime);
     currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
-
 seekBar.addEventListener('input', () => {
     audio.currentTime = seekBar.value;
 });
-
 
 playPauseBtn.addEventListener('click', () => {
     if (isPlaying) {
@@ -47,19 +42,16 @@ playPauseBtn.addEventListener('click', () => {
     playPauseBtn.textContent = isPlaying ? '⏸' : '▶';
 });
 
-
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     seconds = Math.floor(seconds % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const introductionChapter = document.getElementById('chapter-1');
     introductionChapter.classList.add('active');
     introductionChapter.style.display = 'block';
-
 
     document.getElementById('homepage').style.display = 'none';
 });
